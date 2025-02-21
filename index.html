@@ -28,7 +28,7 @@
 <body>
     <textarea id="notepad" placeholder="Escreva aqui..."></textarea>
     <script>
-        // Salvar conteúdo no localStorage
+        // Função para salvar no localStorage
         const notepad = document.getElementById('notepad');
         if(localStorage.getItem('notepadContent')) {
             notepad.value = localStorage.getItem('notepadContent');
