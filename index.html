@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Bloco de Notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        textarea {
+            width: 90%;
+            height: 90%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="notepad" placeholder="Escreva aqui..."></textarea>
+    <script>
+        // Salvar conteúdo no localStorage
+        const notepad = document.getElementById('notepad');
+        if(localStorage.getItem('notepadContent')) {
+            notepad.value = localStorage.getItem('notepadContent');
+        }
+        notepad.addEventListener('input', () => {
+            localStorage.setItem('notepadContent', notepad.value);
+        });
+    </script>
+</body>
+</html>
